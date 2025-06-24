@@ -1,39 +1,30 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# String Calculator TDD
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages). 
+A simple string calculator built using Test-Driven Development in Dart.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages). 
--->
+## What it does
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Takes a string of numbers and returns their sum:
+
+```dart
+calculator.add("1,2,3")      // Returns 6
+calculator.add("1\n2,3")    // Returns 6 (handles newlines)
+calculator.add("//;\n1;2")  // Returns 3 (custom delimiter)
+calculator.add("")          // Returns 0 (empty string)
+```
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Handles empty strings
+- Supports comma-separated numbers
+- Accepts newlines as delimiters
+- Custom delimiters with `//[delimiter]\n` format
+- Validates against negative numbers
+- Shows all negative numbers in error message
 
-## Getting started
+## Running
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
+```bash
+# Run tests
+dart test
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
