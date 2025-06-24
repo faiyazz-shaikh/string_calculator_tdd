@@ -20,9 +20,21 @@ class StringCalculator {
     // Replace new lines with the delimiter
     numbersToProcess = numbersToProcess.replaceAll('\n', delimiter);
 
-    return numbersToProcess
+    // Split by delimiter and convert to integers
+    var numberList = numbersToProcess
         .split(delimiter)
         .map((number) => int.parse(number))
-        .fold(0, (sum, number) => sum + number);
+        .toList();
+
+    // Filter out negative numbers
+    var negativeNumbers = numberList.where((number) => number < 0).toList();
+
+    // Check for negative numbers
+    if (negativeNumbers.isNotEmpty) {
+      String negativeNumbersString = negativeNumbers.join(',');
+      throw Exception('negative numbers not allowed $negativeNumbersString');
+    }
+
+    return numberList.fold(0, (sum, number) => sum + number);
   }
 }
