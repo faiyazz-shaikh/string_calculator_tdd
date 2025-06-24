@@ -4,6 +4,9 @@ class StringCalculator {
       return 0;
     }
 
-    throw UnimplementedError('Need to provide a implementation.');
+    return numbers
+        .split(',')
+        .map((number) => int.parse(number))
+        .fold(0, (sum, number) => sum + number);
   }
 }
