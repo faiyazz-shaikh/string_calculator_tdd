@@ -1,6 +1,6 @@
-import 'package:string_calculator_tdd/string_calculator_tdd.dart';
+import 'package:string_calculator_tdd/string_calculator.dart';
 
 void main() {
-  var awesome = Awesome();
-  print('awesome: ${awesome.isAwesome}');
+  final stringCalculator = StringCalculator();
+  print(stringCalculator.add(''));
 }
